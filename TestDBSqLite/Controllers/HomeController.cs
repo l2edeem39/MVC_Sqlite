@@ -24,7 +24,7 @@ namespace TestDBSqLite.Controllers
         public ActionResult Index()
         {
 
-            var result = _dbContext.Users.FirstOrDefault();
+            var result = _dbContext.Users.ToList();
             //result.Where(x => x.LastName == "Test").Select(x => x.LastName = "44444");
             var sss = new UserModel()
             {

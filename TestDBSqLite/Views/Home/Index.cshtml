@@ -1,17 +1,20 @@
-﻿@model TestDBSqLite.DataAccess.UserModel
+﻿@using TestDBSqLite.DataAccess
+@model List<UserModel>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <table width="640" border="1" align="center" bordercolor="#CCCCCC" style="border-collapse: collapse">
     <tr>
-        <td width="612" height="28" bgcolor="#F4F4F4"><div align="center"><span class="header">รายการความคุ้มครองตามกรมธรรม์</span></div></td>
+        <th width="612" height="28"><div align="center"><span class="header">Name</span></div></th>
+        <th width="612" height="28"><div align="center"><span class="header">LastName</span></div></th>
     </tr>
-    <tr>
-        <td height="28" bgcolor="#F4F4F4"><div align="center" class="header">@Model.Name</div></td>
-    </tr>
-    @*@foreach (var item in @Model)
-    { 
 
-    }*@
+    @foreach (var item in @Model)
+    {
+        <tr>
+            <td height="28" bgcolor="#F4F4F4"><div align="center" class="header">@item.Name</div></td>
+            <td height="28" bgcolor="#F4F4F4"><div align="center" class="header">@item.LastName</div></td>
+        </tr>
+    }
 </table>
